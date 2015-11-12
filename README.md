@@ -2,10 +2,10 @@
 
 AngularJS service implementation of debounced `window resize` event handler.
 
-Inject the `window.resize` service into your application module:
+Inject the `resize` service into your application module:
 
 ```
-angular.module('myApp', ['window.resize']);
+angular.module('myApp', ['resize']);
 ```
 
 Inject the `resize` service into your application where you'd like to implement it.

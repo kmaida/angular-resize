@@ -11,7 +11,7 @@
 	/**
 	 * Usage:
 	 *
-	 * angular.module('myApp', ['window.resize']);
+	 * angular.module('myApp', ['resize']);
 	 *
 	 * resize.init({
 	 *      scope: $scope,
