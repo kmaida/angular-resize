@@ -13,7 +13,7 @@
 	 *
 	 * angular.module('myApp', ['window.resize']);
 	 *
-	 * windowResize.init({
+	 * resize.init({
 	 *      scope: $scope,
 	 *      resizedFn: function() { //window was resized! },
 	 *      debounce: 200
