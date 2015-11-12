@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>angular-resize</title>
+
+    <style>
+        <!--
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak {
+            display: none !important;
+        }
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+
+        /*-- Demo styles --*/
+
+        body {
+            font: normal 14px Helvetica, Arial, sans-serif;
+        }
+        code,
+        pre {
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: inline-block;
+            font: normal 12px Consolas, 'Courier New', 'Courier', 'monospace';
+            padding: 2px 3px;
+        }
+        pre {
+            display: block;
+            line-height: 1.2;
+            margin: 15px 0;
+            padding: 6px;
+            overflow-x: auto;
+        }
+    </style>
+
+</head>
+<body ng-cloak>
+
+<div class="wrapper">
+
+    <h1>AngularJS Window Resize</h1>
+
+    <div ng-controller="ResizeCtrl">
+        <p>Resize your browser window.</p>
+
+        Resized: <code>{{resizeCounter}}</code>
+
+        <pre>
+(function() {
+    'use strict';
+
+    angular.module('myApp', ['resize']);
+
+    angular.module('myApp').controller('ResizeCtrl', ['$scope', 'resize', '$timeout', function($scope, resize, $timeout) {
+        $scope.resizeCounter = 0;
+
+        resize.init({
+            scope: $scope,
+            resizedFn: function() {
+                $scope.resizeCounter++;
+            },
+            debounce: 200
+        });
+    }]);
+})();
+        </pre>
+
+        <p>* <strong>Why is <code>$scope</code> in the options?</strong> $scope is needed to unbind the resize listener when scope is destroyed so that the event does not leak into undesired areas of your application.</p>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="angular-resize.js"></script>
+
+<script>
+    (function() {
+        'use strict';
+
+        angular.module('myApp', ['resize']);
+
+        angular.module('myApp').controller('ResizeCtrl', ['$scope', 'resize', function($scope, resize) {
+            $scope.resizeCounter = 0;
+
+            resize.init({
+                scope: $scope,
+                resizedFn: function() {
+                    $scope.resizeCounter++;
+                },
+                debounce: 200
+            });
+        }]);
+    })();
+</script>
+</body>
+</html>
