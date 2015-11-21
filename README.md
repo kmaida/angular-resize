@@ -1,20 +1,20 @@
 #angular-resize
 
-AngularJS service implementation of debounced `window resize` event handler.
+AngularJS factory implementation of debounced `window resize` event handler.
 
-Inject the `resize` service into your application module:
+Inject the `resize` factory into your application module:
 
 ```
 angular.module('myApp', ['resize']);
 ```
 
-Inject the `resize` service into your application where you'd like to implement it.
+Inject the `resize` factory into your application where you'd like to implement it.
 
 ```
 angular
 	.module('myApp')
 	.controller('MainCtrl', function(resize) {
-		resize.init({
+		var rs = resize.init({
 			scope: $scope,
 			resizedFn: function() { //window was resized! },
 			debounce: 200

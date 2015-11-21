@@ -62,7 +62,7 @@
     angular.module('myApp').controller('ResizeCtrl', ['$scope', 'resize', '$timeout', function($scope, resize, $timeout) {
         $scope.resizeCounter = 0;
 
-        resize.init({
+        var rs = resize.init({
             scope: $scope,
             resizedFn: function() {
                 $scope.resizeCounter++;
@@ -89,7 +89,7 @@
         angular.module('myApp').controller('ResizeCtrl', ['$scope', 'resize', function($scope, resize) {
             $scope.resizeCounter = 0;
 
-            resize.init({
+            var rs = resize.init({
                 scope: $scope,
                 resizedFn: function() {
                     $scope.resizeCounter++;
