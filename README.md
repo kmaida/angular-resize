@@ -1,4 +1,4 @@
-#angular-resize
+# angular-resize
 
 AngularJS factory implementation of debounced `window resize` event handler.
 
@@ -22,9 +22,9 @@ angular
 	});
 ```
 
-##Options
+## Options
 
-###scope
+### scope
 
 * Type: `scope object`
 * Default: *none*
@@ -32,7 +32,7 @@ angular
 `scope` is needed to unbind the `resize` listener when `$scope` is destroyed. This prevents the event handler from 
 leaking into undesired areas of your single page application.
 
-###resizedFn
+### resizedFn
 
 * Type: `function`
 * Default: *none*
@@ -40,7 +40,7 @@ leaking into undesired areas of your single page application.
 `resizedFn` is the debounced function you'd like to run as your `resize` handler. This function will run when the 
 viewport is resized.
 
-###debounce
+### debounce
 
 * Type: `integer`
 * Units: `milliseconds`
