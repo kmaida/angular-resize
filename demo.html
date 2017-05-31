@@ -91,10 +91,11 @@
 
             var rs = resize.init({
                 scope: $scope,
-                resizedFn: function() {
+                resizedFn: function(newWidth,newHeight) {
+                    console.log(newWidth,newHeight);
                     $scope.resizeCounter++;
                 },
-                debounce: 200
+                debounce: 300
             });
         }]);
     })();

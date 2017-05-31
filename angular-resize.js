@@ -52,7 +52,9 @@
 			 */
 			function _resizeHandler() {
 				$timeout.cancel(_debounceResize);
-				_debounceResize = $timeout(_resizedFn, _debounceSpeed);
+				_debounceResize = $timeout(function () {
+					_resizedFn.call(this, $window.innerWidth,$window.innerHeight);
+				}, _debounceSpeed);
 			}
 
 			// run initial resize
